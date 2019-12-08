@@ -49,13 +49,19 @@ class Subway
             puts distance.to_s + " stops in total."
         end
     end
+
+    def add_line(line)
+        @lines.merge! line
+    end
 end
 
 red = Line.new(["South Station","Kendall","Central","Harvard","Park Street","Porter","Davis","Alewife"])
 green = Line.new(["Government Center","Boylston","Arlington","Park Street","Copley","Hynes","Kenmore"])
 orange = Line.new(["North Station","Haymarket","State","Downtown Crossing","Chinatown","Park Street","Back Bay","Forest Hills"])
 
-subway = Subway.new({"red" => red, "green" => green, "orange" => orange})
+subway = Subway.new({"red" => red})
+subway.add_line({"green" => green})
+subway.add_line({"orange" => orange})
 
 puts subway.stops_between_stations('Red', 'Alewife', 'Red', 'Park Street')
 puts subway.stops_between_stations('Red', 'Alewife', 'Orange', 'Downtown Crossing')

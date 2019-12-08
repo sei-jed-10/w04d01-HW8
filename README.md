@@ -8,26 +8,26 @@
 ## Activity
 
 Create a program that models a subway system.
-
+=
 The program takes the line and stop that a user is getting on at and the line and stop that user is getting off at and prints the journey and the total number of stops for the trip in the console:
 
 There are 3 subway lines:
 
 **Red line**
 - South Station
-- Park Street
 - Kendall
 - Central
 - Harvard
+- Park Street
 - Porter
 - Davis
 - Alewife
 
 **Green line** 
 - Government Center
-- Park Street
 - Boylston
 - Arlington
+- Park Street
 - Copley
 - Hynes
 - Kenmore
@@ -35,10 +35,10 @@ There are 3 subway lines:
 **Orange line**
 - North Station
 - Haymarket
-- Park Street
 - State
 - Downtown Crossing
 - Chinatown
+- Park Street
 - Back Bay
 - Forest Hills
 
@@ -49,9 +49,9 @@ All 3 subway lines intersect at Park Street, but there are no other intersection
 Tell the user the number of stops between stations.
 
 ```rb
-stops_between_stations('Red', 'Alewife', 'Red', 'Alewife') # 0
-stops_between_stations('Red', 'Alewife', 'Red', 'South Station') # 7
-stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') # 6
+stops_between_stations('Red', 'Alewife', 'Red', 'Park Street')) // 3 stops
+stops_between_stations('Red', 'Alewife', 'Orange', 'Downtown Crossing') // 5 stops
+stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') // 7 stops
 ```
 
 ### Bonus
@@ -60,11 +60,11 @@ Tell the user the number of stops between stations AND the stops IN ORDER that t
 ```rb
 stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') 
 # "You must travel through the following stops on the Red line:"
-# "South Station and Park Street"
+# "South Station, Kendall, Central, Harvard and Park Street"
 # "Change at Park Street."
 # "Your trip continues through the following stops on Green Line:" 
-# "Boylston, Arlington, Copley, Hines, and Kenmore."
-# "7 stops in total."
+# "Copley, Hines, and Kenmore."
+# "8 stops in total."
 ```
 
 ### Double Bonus

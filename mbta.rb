@@ -52,7 +52,7 @@ end_station_parkstrete = $stations[endline].index("Park Street")
 
 from_parkstret = (endstationindex - end_station_parkstrete).abs
 
-total_stops = (to_parkstreat-from_parkstret).abs
+total_stops = (to_parkstreat+from_parkstret).abs
 return total_stops
 
 end

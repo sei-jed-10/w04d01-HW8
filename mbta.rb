@@ -37,11 +37,11 @@ def stops_between_stations
     # puts "The line is wrong" unless startline == "Red" && startline == "Green" && startline == "Orange" || endline == "Red" && endline == "Green" && endline == "Orange" 
 
 
-     indexofStartStation = 0
-     indexofEndStation = 0
-     sharedPoint = 0
-     sharedPoint2 = 0
-     totalSteps = 0
+     indexofstartstation = 0
+     indexofendstation = 0
+     sharedpoint = 0
+     sharedpoint2 = 0
+     totalsteps = 0
 
 
     i = 0
@@ -50,12 +50,12 @@ def stops_between_stations
         while j < subways[i][:stations].length
       
       if startline == subways[i][:line] 
-        indexofStartStation = subways[i][:stations].indexOf(startstation)
-        sharedPoint =  subways[i][:stations].indexOf("Park Street")
+        indexofstartstation = subways[i][:stations].indexOf(startstation)
+        sharedpoint =  subways[i][:stations].indexOf("Park Street")
       end
       if endline == subways[i][:line]
-        indexofEndStation = subways[i][:stations].indexOf(endstation)
-        sharedPoint2 =  subways[i][:stations].indexOf("Park Street")
+        indexofendstation = subways[i][:stations].indexOf(endstation)
+        sharedpoint2 =  subways[i][:stations].indexOf("Park Street")
       end
     
         j+=1
@@ -64,8 +64,8 @@ def stops_between_stations
     end
 
 
-    if startline == endline then totalSteps =  indexofStartStation-indexofEndStation 
-    else totalSteps = (indexofEndStation - sharedPoint2) + (sharedPoint-indexofStartStation)
+    if startline == endline then totalsteps =  indexofstartstation-indexofendstation 
+    else totalsteps = (indexofendstation - sharedpoint2) + (sharedpoint-indexofstartstation)
     end
 
 
@@ -76,7 +76,7 @@ def stops_between_stations
     end
     puts "Rider Arrives to #{endline} line At #{endstation} "	
                              
-    puts totalSteps
+    puts totalsteps
 
 
 end

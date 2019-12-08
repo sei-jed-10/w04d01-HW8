@@ -62,3 +62,11 @@ def display
     ## display the solution..
 
 end
+
+
+###
+# 1) initialize arrays with red,green,orange
+# 2) then i wanted to create a variable where i calculate the index of the element in the array
+# 3) I was not sure how to call from inside the class in ruby.. but I wanted to get the index of this array inside of the class and then subtract it from the given name.
+# 4) create if else statement to compare between index of stations inside an array
+# 5) I did not try the code, but i wanted to makea  display function afterwards

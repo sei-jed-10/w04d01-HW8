@@ -31,9 +31,9 @@ def stops_between_stations
                         ]
 
     # bounus
-    if startline != "Red" && startline != "Green" && startline != "Orange" || endline != "Red" && endline != "Green" && endline != "Orange" 
-         puts "The line is wrong"
-    end
+    # if startline != "Red" && startline != "Green" && startline != "Orange" || endline != "Red" && endline != "Green" && endline != "Orange" 
+    #      puts "The line is wrong"
+    # end
     # puts "The line is wrong" unless startline == "Red" && startline == "Green" && startline == "Orange" || endline == "Red" && endline == "Green" && endline == "Orange" 
 
 
@@ -50,12 +50,12 @@ def stops_between_stations
         while j < subways[i][:stations].length
       
       if startline == subways[i][:line] 
-        indexofstartstation = subways[i][:stations].indexOf(startstation)
-        sharedpoint =  subways[i][:stations].indexOf("Park Street")
+        indexofstartstation = subways[i][:stations].index(startstation)
+        sharedpoint =  subways[i][:stations].index("Park Street")
       end
       if endline == subways[i][:line]
-        indexofendstation = subways[i][:stations].indexOf(endstation)
-        sharedpoint2 =  subways[i][:stations].indexOf("Park Street")
+        indexofendstation = subways[i][:stations].index(endstation)
+        sharedpoint2 =  subways[i][:stations].index("Park Street")
       end
     
         j+=1

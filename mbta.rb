@@ -1,12 +1,12 @@
 #Declaring and initializaing 3 arrays representing each subway line: Red, Green , and Orange.
 $redSubwayLine = ["South Station", "Park Street", "Kendall,Central", "Harvard", "Porter", "Davis", "Alewife"];
 
-$greenSubwayLine = ["Government Center", "Park Street", "Boylston", "Arlington", "Copley", "Hynes", "Kenmore"];
+$greenSubwayLine = ["Government Center", "Boylston", "Arlington", "Park Street","Copley", "Hynes", "Kenmore"];
 
-$orangeSubwayLine = ["North Station", "Haymarket", "Park Street", "State", "Downtown Crossing", "Chinatown", "Back Bay", "Forest Hills"];
+$orangeSubwayLine = ["North Station", "Haymarket",  "State", "Downtown Crossing", "Chinatown", "Park Street", "Back Bay", "Forest Hills"];
 
 #intersection variable holds the value of the station that intersects the three subway lines.
-$intersection = "Park Street";
+$intersection = "Park Street"
 
 $validStartStation=false
 $validEndStation=false
@@ -61,8 +61,7 @@ def getSubwayLineList(inputLine)
         #end #if start line== end line
         else
         numberOfStops=(startSubwayLineList.index(startStation)-startSubwayLineList.index($intersection)).abs()
-  
-        numberOfStops+=(endSubwayLineList.index(endStation)-endSubwayLineList.index($intersection)).abs
+        numberOfStops+=(endSubwayLineList.index(endStation)-endSubwayLineList.index($intersection)).abs+1
         p "Total number of stops= " + numberOfStops.to_s
 
         end 
@@ -77,6 +76,6 @@ stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') #// 7 stops
 
 # some previous test cases
 
- stops_between_stations('Red', 'Alewife', 'Red', 'Alewife') # 0 stops
- stops_between_stations('Red', 'South Station', 'Green', 'Copley') # 4 stops
+ #stops_between_stations('Red', 'Alewife', 'Red', 'Alewife') # 0 stops
+ #stops_between_stations('Red', 'South Station', 'Green', 'Copley') # 4 stops
 

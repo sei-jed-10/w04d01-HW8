@@ -4,26 +4,26 @@ class Hw8
 
 $subway_lines = {
     red: ["South Station",
-            "Park Street",
             "Kendall",
             "Central",
             "Harvard",
+            "Park Street",
             "Porter",
             "Davis",
             "Alewife"],
     green: ["Government Center",
-            "Park Street",
             "Boylston",
             "Arlington",
+            "Park Street",
             "Copley",
             "Hynes",
             "Kenmore"],
     orange: ["North Station",
             "Haymarket",
-            "Park Street",
             "State",
             "Downtown Crossing",
             "Chinatown",
+            "Park Street",
             "Back Bay",
             "Forest Hills"]
 
@@ -63,7 +63,7 @@ end
 end
 
 x = Hw8.new
-x.stops_between_stations('red','Alewife','red','South Station')
+x.stops_between_stations('red','Alewife','green','Copley')
 
  /////////bonus///////
 puts "Enter your start line"
@@ -83,6 +83,7 @@ puts "Enter your end station"
 user_input4 = gets
 
 x.stops_between_stations(user_input1,user_input2,user_input3,user_input4)
+
 
 
 

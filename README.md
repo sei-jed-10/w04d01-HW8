@@ -7,13 +7,14 @@
 
 ## Activity
 
-Create a program that models a subway system.
-=
+# Create a program that models a subway system.
+
 The program takes the line and stop that a user is getting on at and the line and stop that user is getting off at and prints the journey and the total number of stops for the trip in the console:
 
 There are 3 subway lines:
 
 **Red line**
+
 - South Station
 - Kendall
 - Central
@@ -23,7 +24,8 @@ There are 3 subway lines:
 - Davis
 - Alewife
 
-**Green line** 
+**Green line**
+
 - Government Center
 - Boylston
 - Arlington
@@ -33,6 +35,7 @@ There are 3 subway lines:
 - Kenmore
 
 **Orange line**
+
 - North Station
 - Haymarket
 - State
@@ -57,12 +60,13 @@ stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') // 7 stops
 ### Bonus
 
 Tell the user the number of stops between stations AND the stops IN ORDER that they will pass through or change at.
+
 ```rb
-stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') 
+stops_between_stations('Red', 'South Station', 'Green', 'Kenmore')
 # "You must travel through the following stops on the Red line:"
 # "South Station, Kendall, Central, Harvard and Park Street"
 # "Change at Park Street."
-# "Your trip continues through the following stops on Green Line:" 
+# "Your trip continues through the following stops on Green Line:"
 # "Copley, Hines, and Kenmore."
 # "8 stops in total."
 ```

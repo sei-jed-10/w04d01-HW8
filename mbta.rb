@@ -34,25 +34,25 @@ $subway = {
 }
 
 
-def stops_between_stations (l1, s1, l2, s2)
+# def stops_between_stations (l1, s1, l2, s2)
 
-@l1 = l1
-@s1 =s1
-@l2 = l2
-@s2 = s2
+# @l1 = l1
+# @s1 =s1
+# @l2 = l2
+# @s2 = s2
 
-if l1 == l2
-puts "// #{($subway[l1].index(s1) - $subway[l2].index(s2)).abs}  Stops"
-elsif l1 != l2
-    puts " // #{(($subway[l1].index(s1) - $subway[l1].index("Park Street")).abs) + 
-    (($subway[l2].index(s2) - $subway[l2].index("Park Street")).abs)}  Stops"
-end
+# if l1 == l2
+# puts "// #{($subway[l1].index(s1) - $subway[l2].index(s2)).abs}  Stops"
+# elsif l1 != l2
+#     puts " // #{(($subway[l1].index(s1) - $subway[l1].index("Park Street")).abs) + 
+#     (($subway[l2].index(s2) - $subway[l2].index("Park Street")).abs)}  Stops"
+# end
 
-end
+# end
  
-stops_between_stations('Red', 'Alewife', 'Red', 'Park Street')
-stops_between_stations('Red', 'Alewife', 'Orange', 'Downtown Crossing')
-stops_between_stations('Red', 'South Station', 'Green', 'Kenmore')
+# stops_between_stations('Red', 'Alewife', 'Red', 'Park Street')
+# stops_between_stations('Red', 'Alewife', 'Orange', 'Downtown Crossing')
+# stops_between_stations('Red', 'South Station', 'Green', 'Kenmore')
 
 ## Bonus --------------------------------------------------------------------------------------
 def stops_between_stations (l1, s1, l2, s2)
@@ -95,16 +95,28 @@ elsif l1 != l2
     
     end
      
-    stops_between_stations('Red', 'South Station', 'Green', 'Kenmore')
-
-
-
- 
-
-
+    # stops_between_stations('Red', 'South Station', 'Green', 'Kenmore')
 
            #{x =1
         #    until x <= dif_start
         #     puts $subway[l1].index(s1) + 1
         #     x += 1
         #   end} 
+
+
+# Double Bonus
+
+puts " Please enter the first Line"
+l1 = gets.chomp.to_s
+puts "Please enter the first station" 
+s1=gets.chomp.to_s
+puts " Please enter the secodn Line"
+l2 = gets.chomp.to_s
+puts " Please enter the secodn station"
+s2 = gets.chomp.to_s
+
+stops_between_stations(l1, s1,l2,s2)
+
+
+
+

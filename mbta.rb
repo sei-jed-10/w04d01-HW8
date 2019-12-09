@@ -62,7 +62,7 @@ def getSubwayLineList(inputLine)
         else
         numberOfStops=(startSubwayLineList.index(startStation)-startSubwayLineList.index($intersection)).abs()
   
-        numberOfStops+=(endSubwayLineList.index(endStation)-endSubwayLineList.index($intersection)).abs+1
+        numberOfStops+=(endSubwayLineList.index(endStation)-endSubwayLineList.index($intersection)).abs
         p "Total number of stops= " + numberOfStops.to_s
 
         end 
@@ -74,4 +74,9 @@ stops_between_stations('Red', 'Alewife', 'Red', 'Park Street') #// 3 stops
 stops_between_stations('Red', 'Alewife', 'Orange', 'Downtown Crossing') #// 5 stops
 stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') #// 7 stops
         
+
+# some previous test cases
+
+ stops_between_stations('Red', 'Alewife', 'Red', 'Alewife') # 0 stops
+ stops_between_stations('Red', 'South Station', 'Green', 'Copley') # 4 stops
 

@@ -6,44 +6,15 @@ def stops_between_stations (start_line,start_station,end_line,end_station)
     }
        start_station = subway[start_line.to_sym].index(start_station)
          end_station = subway[end_line.to_sym].index(end_station)
-         break_Point_S = subway[start_line.to_sym].index("Park Street")
-         break_Point_E = subway[end_line.to_sym].index("Park Street")
+         break_point_of_start = subway[start_line.to_sym].index("Park Street")
+         break_point_of_end = subway[end_line.to_sym].index("Park Street")
          if start_line == end_line
              $result = (start_station - end_station).abs  
          elsif start_line != end_line
-             steps = (start_station - break_Point_S).abs
-             result = (end_station  - break_Point_E).abs + steps 
+             steps = (start_station - break_point_of_start).abs
+             result = (end_station  - break_point_of_end).abs + steps 
          end
    end 
   p stops_between_stations('red', 'Alewife', 'red', 'Alewife') 
   p stops_between_stations('red', 'Alewife', 'red', 'South Station') 
  p stops_between_stations('red', 'South Station', 'orange', 'Forest Hills') 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

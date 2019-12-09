@@ -49,37 +49,38 @@ def getSubwayLineList(inputLine)
                     if (!(station==endStation)) #as long as the end station on that line hasn't been reached yet:
                         print ", " #add commas between station names.
                 
-                else #if the station in the current itration is the end station.
+                    else #if the station in the current itration is the end station.
                     print "."
                     numberOfStops=startSubwayLineList.index(startStation)-startSubwayLineList.index(endStation) #calculate the number of stops by getting the difference between the indices of the start and end stations on that line.
                     puts  "\n" +numberOfStops.to_s+" stops in total." #print the total number of stops.
                     return
-                end
-                end
-
+                    end #of inner if .. else (for printing stations)
+                end #of for loop.
             end #of if startstation==end station
-        else
-        puts "\nYou must travel through the following stops on the #{startLine} line:"
-        for station in startSubwayLineList
-            #same as before, keep printing station names and seperate them by commas except when we reach "Park Street".
-            if (!(station==$intersection))
-                print station+", "
-        
-        else
-            print "and "+$intersection+"."
-            break;
-        end
-    end
 
-    puts "\nChange at "+$intersection
-    puts "Your trip continues through the following stops on #{endLine} Line:" 
+        else #start subway line != end subway line.
+        puts "\nYou must travel through the following stops on the #{startLine} line:"
+            for station in startSubwayLineList
+            #same as before, keep printing station names and seperate them by commas except when we reach "Park Street".
+                if (!(station==$intersection))
+                  print station+", "
+        
+                else
+                  print "and "+$intersection+"."
+                  break
+                  end #of inner if (printing stations)
+              end #of for loop.
+
+        puts "\nChange at "+$intersection
+        puts "Your trip continues through the following stops on #{endLine} Line:" 
     #loop through the stations of the end subway line list starting from the index of the intersection until the end station.
     endSubwayLineList[endSubwayLineList.index($intersection)+1..-1].each {|endLineStation|
-    if(endLineStation==endStation)
-        print "and "+endLineStation+"."
-    else
-    print endLineStation+", "
-    end 
+        if(endLineStation==endStation)
+          print "and "+endLineStation+"."
+        else
+        print endLineStation+", "
+        end #of if statement.
+      }
         #calculate and print the total number of stops.
         #First we need to calculate the difference between the index of the start station and the intersection on the start line.
         numberOfStops=(startSubwayLineList.index(startStation)-startSubwayLineList.index($intersection)).abs()
@@ -87,9 +88,9 @@ def getSubwayLineList(inputLine)
         #And finally, sum the two values calculated earlier to get the total number of stops from the start station on the start line to the end station on the en line.
         numberOfStops+=(endSubwayLineList.index(endStation)-endSubwayLineList.index($intersection)).abs
         puts  "\n" +numberOfStops.to_s+" stops in total."
-        end 
-
-    end
+         
+      end 
+    end #of outer else
 end
 
 stops_between_stations('Red', 'Alewife', 'Red', 'Park Street') # 3 stops

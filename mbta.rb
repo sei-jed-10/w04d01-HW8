@@ -1,78 +1,74 @@
-Subway_Lines =
-{
-  Red: [ 'South Station' , 'Park Street' , 'Kendall' , 'Central' , 'Harvard' , 'Porter' , 'Davis' , 'Alewife'] ,
-  Green: [ 'Government Center' , 'Park Street' , 'Boylston' , 'Arlington' , 'Copley' , 'Hynes' , 'Kenmore'] ,
-  Orange: [ 'North Station' , 'Haymarket' , 'Park Street' , 'State' , 'Downtown Crossing' , 'Chinatown' , 'Back Bay' , 'Forest Hills'] ,
-
- Stops_loop: def arr
- stops = -1
-    for lines in arr 
-      stops ++
-    
-   return stops
-  end
- ,
-
- stopsBetweenStations: def (Start_Line,Start_Station, End_Line, End_Station)
-  
-    if ((Start_Line||End_Line)!==('Red'||'Green'||'Orange')) #Bonus
-    {
-    puts ('You must choose an exist line')
-    }
-    else
-    {
-     Stops =0
-     Intersection_Index_1=self[Start_Line].index('Park Street')
-     Intersection_Index_2=self[End_Line].index('Park Street')
-     Start_Station_Index=self[Start_Line].index(Start_Station)
-     End_Station_Index=self[End_Line].index(End_Station)
-
-    if (Start_Line == End_Line)
-    {
-      if(Start_Station==End_Station)
-      {
-        puts ('Rider boards the train a '+Start_Station+' Station and end up in the same station .')
-        return 'Number of stops = '+ Stops
-      }
-      elsif (Start_Station_Index<End_Station_Index)
-     {
-       puts ('Rider boards the train a '+ Start_Line +' Line and '+Start_Station+'.')
-        arr = self[Start_Line].slice(Start_Station_Index , End_Station_Index + 1)
-        puts (arr)
-        num =self.Stops_loop(arr)
-        puts ('Rider exits the train at '+End_Line +' Line and '+End_Station+' .')
-        return 'Number of stops = '+num
-      }
-      elsif (Start_Station_Index>End_Station_Index)
-     {
-       puts ('Rider boards the train a '+Start_Line+' Line and '+Start_Station+'.')
-       arr = self[Start_Line].slice( End_Station_Index ,  Start_Station_Index + 1)
-       puts (arr)
-         num =self.Stops_loop(arr)
-        puts ('Rider exits the train at '+End_Line +' Line and '+End_Station+' .')
-        return 'Number of stops = '+ num 
-      }
-    }
-   else
-    {
-     puts ('Rider boards the train a '+Start_Line+' Line and '+Start_Station+'.')
-     arr1 = self[Start_Line].slice(Start_Station_Index , Intersection_Index_1 + 1)
-     arr2 = self[End_Line].slice(Intersection_Index_2 , End_Station_Index + 1)
-     num1 =self.Stops_loop(arr1)
-     puts ('Rider transfers from '+Start_Line+' Line to '+End_Line+' Line at Park Street. ')
-     num2=self.Stops_loop(arr2)
-     num =num1+num2
-     puts ('Rider exits the train at '+End_Line +' Line and '+End_Station+' .')
-     return 'Number of stops = '+ num
-    }
-  }
+def Stops_loop (arr)
+  stops = -1
+   for lines in arr do
+     stops +=1
+   end 
+  return stops
 end
+
+def stops_between_stations (start_line,start_station, end_line, end_station) 
+
+subway_lines =
+{
+ red: [ "South Station" , "Park Street" , "Kendall" , "Central" , "Harvard" , "Porter" , "Davis" , "Alewife"] ,
+ green: [ "Government Center" , "Park Street" , "Boylston" , "Arlington" , "Copley" , "Hynes" , "Kenmore"] ,
+ orange: [ "North Station" , "Haymarket" , "Park Street" , "State" , "Downtown Crossing" , "Chinatown" , "Back Bay" , "Forest Hills" ] 
 }
 
+ stops =0
+ intersection_index_1=subway_lines[start_line.to_sym].index("Park Street")
+ intersection_index_2=subway_lines[end_line.to_sym].index("Park Street")
+ start_station_index=subway_lines[start_line.to_sym].index(start_station)
+ end_station_index=subway_lines[end_line.to_sym].index(end_station)
 
-Subway_Lines.stopsBetweenStations('Red','South Station', 'Red',  'Central')  # 3 stops
-#Subway_Lines.stopsBetweenStations('Red', 'Alewife', 'Red', 'Alewife') # 0 stops
-#Subway_Lines.stopsBetweenStations('Red', 'Alewife', 'Red', 'South Station') # 7 stops
-#Subway_Lines.stopsBetweenStations('Red', 'South Station', 'Green', 'Kenmore') # 6 stops
-#Subway_Lines.stopsBetweenStations('Red', 'South Station', 'Green', 'Copley') # 4 stops
-#Subway_Lines.stopsBetweenStations('Blue', 'South Station', 'Green', 'Copley') # You must choose an exist line
+ if (start_line == end_line)
+   
+     if(start_station==end_station)
+      
+       puts "Rider boards the train a #{start_station} Station and end up in the same station ."
+       puts "Number of stops = #{stops} " 
+      
+     elsif (start_station_index < end_station_index)
+     
+       puts "Rider boards the train a #{start_line} Line and #{start_station} "
+       arr = subway_lines[start_line.to_sym].slice(start_station_index , end_station_index + 1)
+       print " This is the stops stations #{arr} \n"
+       num =Stops_loop(arr)
+       puts "Rider exits the train at #{end_line} Line and #{end_station} "
+       puts "Number of stops = #{num} "
+      
+     elsif (start_station_index>end_station_index)
+     
+      puts "Rider boards the train a #{start_line} Line and #{start_station} "
+      arr = subway_lines[start_line.to_sym].slice( end_station_index , start_station_index + 1)
+      print " This is the stops stations #{arr} \n"
+        num =Stops_loop(arr)
+       puts "Rider exits the train at #{end_line} Line and #{end_station} "
+       puts "Number of stops = #{num} "
+     
+   end
+
+   
+  else
+   
+    puts "Rider boards the train a #{start_line} Line and #{start_station} "
+    arr1 = subway_lines[start_line.to_sym].slice(start_station_index , intersection_index_1 + 1)
+    arr2 = subway_lines[end_line.to_sym].slice(intersection_index_2 , end_station_index + 1)
+    num1 =Stops_loop(arr1)
+    puts "Rider transfers from #{start_line} Line to #{end_line} Line at Park Street. "
+    num2=Stops_loop(arr2)
+    num =num1+num2
+    puts "Rider exits the train at #{end_line} Line and #{end_station} "
+    puts "Number of stops = #{num} "
+ end
+
+end
+
+
+
+#stops_between_stations("red","South Station", "red", "Central")  # 3 stops
+#stops_between_stations("red", "Alewife", "red", "Alewife") # 0 stops
+#stops_between_stations('red', 'Alewife', 'red', 'South Station') # 7 stops
+#stops_between_stations("red", "South Station", "green", "Kenmore") # 6 stops
+stops_between_stations("red", "South Station", "green", "Copley") # 5 stops
+

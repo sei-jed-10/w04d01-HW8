@@ -1,9 +1,9 @@
 
-# your solution here
-class Hw8
 
-$subway_lines = {
-    red: ["South Station",
+    def stops_between_stations(start_line,start_station,end_line,end_station)
+
+      $subway_lines = {
+        red: ["South Station",
             "Kendall",
             "Central",
             "Harvard",
@@ -11,14 +11,14 @@ $subway_lines = {
             "Porter",
             "Davis",
             "Alewife"],
-    green: ["Government Center",
+     green: ["Government Center",
             "Boylston",
             "Arlington",
             "Park Street",
             "Copley",
             "Hynes",
             "Kenmore"],
-    orange: ["North Station",
+     orange: ["North Station",
             "Haymarket",
             "State",
             "Downtown Crossing",
@@ -26,63 +26,37 @@ $subway_lines = {
             "Park Street",
             "Back Bay",
             "Forest Hills"]
+    }
 
-}
 
-$stops
-$total_stops
+    $stops =0
+    $total_stops=0
 
-def stops_between_stations(start_line,start_station,end_line,end_station)
-    
+            indexof_start_station = $subway_lines[start_line.downcase.to_sym].index(start_station)
+            indexof_end_station = $subway_lines[end_line.downcase.to_sym].index(end_station)
 
-        indexof_start_station = $subway_lines[start_line.downcase.to_sym].index(start_station)
-        indexof_end_station = $subway_lines[end_line.downcase.to_sym].index(end_station)
+            if start_line == end_line
+                stops = (indexof_start_station-indexof_end_station).abs
+                puts stops.to_s+" stops"
+            end
 
-        if start_line == end_line
+            if start_line != end_line
+                indexof_parkStreet_start = $subway_lines[start_line.downcase.to_sym].index("Park Street")
+                indexof_parkStreet_end = $subway_lines[end_line.downcase.to_sym].index("Park Street")
+                park_street_start_line = %(#{indexof_start_station - indexof_parkStreet_start}).abs
+                park_street_end_line = %(#{indexof_end_station - indexof_parkStreet_end}).abs
+                total_stops = park_street_start_line + park_street_end_line
+                puts total_stops+ " stops"
+            end
+    end
 
-            stops = %(#{end_station - start_station}).abs
-            puts stops+" stops"
+stops_between_stations('Red', 'Alewife', 'Red', 'Park Street') #3 stops
+stops_between_stations('Red', 'Alewife', 'Orange', 'Downtown Crossing') # 5 stops
+stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') # 7 stops
 
-        end
 
-        if start_line != end_line
+ ######bonus########
 
-            indexof_parkStreet_start = $subway_lines[start_line.downcase.to_sym].index("Park Street")
-            indexof_parkStreet_end = $subway_lines[end_line.downcase.to_sym].index("Park Street")
-
-            park_street_start_line = %(#{indexof_start_station - indexof_parkStreet_start}).abs
-            park_street_end_line = %(#{indexof_end_station - indexof_parkStreet_end}).abs
-
-            total_stops = park_street_start_line + park_street_end_line
-            puts total_stops+ " stops"
-
-        end
-
-end
-
-end
-
-x = Hw8.new
-x.stops_between_stations('red','Alewife','green','Copley')
-
- /////////bonus///////
-puts "Enter your start line"
-
-user_input1 = gets
-
-puts "Enter your start station"
-
-user_input2 = gets
-
-puts "Enter your end line"
-
-user_input3 = gets
-
-puts "Enter your end station"
-
-user_input4 = gets
-
-x.stops_between_stations(user_input1,user_input2,user_input3,user_input4)
 
 
 

@@ -10,9 +10,9 @@ def stops_between_stations (start_line,start_station, end_line, end_station)
 
 subway_lines =
 {
- red: [ "South Station" , "Park Street" , "Kendall" , "Central" , "Harvard" , "Porter" , "Davis" , "Alewife"] ,
- green: [ "Government Center" , "Park Street" , "Boylston" , "Arlington" , "Copley" , "Hynes" , "Kenmore"] ,
- orange: [ "North Station" , "Haymarket" , "Park Street" , "State" , "Downtown Crossing" , "Chinatown" , "Back Bay" , "Forest Hills" ] 
+ red: [ "South Station" , "Kendall" , "Central" , "Harvard" , "Park Street" , "Porter" , "Davis" , "Alewife"] ,
+ green: [ "Government Center" , "Boylston" , "Arlington" , "Park Street" ,"Copley" , "Hynes" , "Kenmore"] ,
+ orange: [ "North Station" , "Haymarket" , "State" , "Downtown Crossing" , "Chinatown" , "Park Street" , "Back Bay" , "Forest Hills" ] 
 }
 
  stops =0
@@ -47,7 +47,7 @@ subway_lines =
        puts "Number of stops = #{num} "
      
    end
-
+ 
    
   else
    
@@ -65,10 +65,6 @@ subway_lines =
 end
 
 
-
-#stops_between_stations("red","South Station", "red", "Central")  # 3 stops
-#stops_between_stations("red", "Alewife", "red", "Alewife") # 0 stops
-#stops_between_stations('red', 'Alewife', 'red', 'South Station') # 7 stops
-#stops_between_stations("red", "South Station", "green", "Kenmore") # 6 stops
-stops_between_stations("red", "South Station", "green", "Copley") # 5 stops
-
+#stops_between_stations("red", "Alewife", "red", "Park Street") # 3 stops
+stops_between_stations('red', 'Alewife', 'orange', 'Downtown Crossing') # 5 stops
+#stops_between_stations('red', 'South Station', 'green', 'Kenmore') # 7 stops

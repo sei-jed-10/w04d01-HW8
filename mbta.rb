@@ -1,26 +1,20 @@
-subway = {
-    "red" => ["South Station", "Park Street" ,"Kendall" ,"Central" ,"Harvard" ,"Porter" ,"Davis" ,"Alewife"],
-    "green" => ["Government" ,"Center" ,"Park Street" ,"Boylston" ,"Arlington" ,"Copley" ,"Hynes" ,"Kenmore"],
-    "orange" =>  ["North Station" ,"Haymarket" ,"Park Street" ,"State" ,"Downtown Crossing" ,"Chinatown" ,"Back Bay" ,"Forest Hills"],
-    stops_between_stations: def stops_between_stations(startline,startstation,endline,endstation)
-        $steps = 0
-        startstation = startline.to_sym
-        # p startstation.index(startstation)
-        endstation = endstation.to_sym
-        # p endstation.index(endstation)
-        breakPointS = startstation.index('Park Street')
-        breakPointE = endline.index('Park Street')
-        $result =0
-
-        if (startline == endline)
+def stops_between_stations (startline,startstation,endline,endstation)
+   subway = {
+    red:["South Station","Kendall","Central","Harvard", "Park Street", "Porter","Davis", "Alewife"],
+    green:["Government Center","Boylston","Arlington","Park Street", "Copley", "Hynes","Kenmore"],
+    orange:["North Station","Haymarket", "State", "Downtown Crossing", "Chinatown","Park Street", "Back Bay", "Forest Hills"]
+   }
+      startstation = subway[startline.to_sym].index(startstation)
+        endstation = subway[endline.to_sym].index(endstation)
+        breakPointS = subway[startline.to_sym].index("Park Street")
+        breakPointE = subway[endline.to_sym].index("Park Street")
+        if startline == endline
             $result = (startstation - endstation).abs  
-        elsif (startline != endline)
-            $steps = (startstation - breakPointS).abs
-            $result = (endstation  - breakPointE).abs - steps 
+        elsif startline != endline
+            steps = (startstation - breakPointS).abs
+            result = (endstation  - breakPointE).abs + steps 
         end
-        return result
-    end 
-}
-
-stops_between_stations('green', 'Alewife', 'Red', 'Park Street')
-
+  end 
+ p stops_between_stations('red', 'Alewife', 'red', 'Alewife') 
+ p stops_between_stations('red', 'Alewife', 'red', 'South Station') 
+p stops_between_stations('red', 'South Station', 'orange', 'Forest Hills') 

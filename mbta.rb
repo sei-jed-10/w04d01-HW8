@@ -65,4 +65,26 @@ end
 x = Hw8.new
 x.stops_between_stations('red','Alewife','red','South Station')
 
+ /////////bonus///////
+puts "Enter your start line"
+
+user_input1 = gets
+
+puts "Enter your start station"
+
+user_input2 = gets
+
+puts "Enter your end line"
+
+user_input3 = gets
+
+puts "Enter your end station"
+
+user_input4 = gets
+
+x.stops_between_stations(user_input1,user_input2,user_input3,user_input4)
+
+
+
+
 

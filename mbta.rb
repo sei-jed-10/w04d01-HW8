@@ -61,9 +61,7 @@ def getSubwayLineList(inputLine)
         #end #if start line== end line
         else
         numberOfStops=(startSubwayLineList.index(startStation)-startSubwayLineList.index($intersection)).abs()
-        numberOfStops=(startSubwayLineList.length-numberOfStops).abs+1
-        p (endSubwayLineList.index(endStation)-endSubwayLineList.index($intersection))
-        numberOfStops+=(endSubwayLineList.index(endStation)-endSubwayLineList.index($intersection))
+        numberOfStops+=(endSubwayLineList.index(endStation)-endSubwayLineList.index($intersection)).abs+1
         p "Total number of stops= " + numberOfStops.to_s
         end 
 

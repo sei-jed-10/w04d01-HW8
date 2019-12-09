@@ -57,6 +57,24 @@ stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') # 7 stops
 
  ######bonus########
 
+p "Enter your statrt line"
+
+user_input1 = gets
+
+p "Enter your statrt station"
+
+user_input2 = gets
+
+p "Enter your end line"
+
+user_input3 = gets
+
+p "Enter your end station"
+
+user_input4 = gets
+
+
+stops_between_stations(user_input1, user_input2, user_input3, user_input4)
 
 
 

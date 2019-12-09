@@ -56,6 +56,6 @@ subwayLines = [
   end
 
   
-puts stopsBetweenStations(Red, 'Alewife', Red, 'Alewife') 
-puts stopsBetweenStations(Red, 'Alewife', Red, 'South Station')  
-puts (stopsBetweenStations(Red, 'Central', Green, 'Arlington'))
+puts stopsBetweenStations(Red, 'Alewife', Red, 'Alewife').to_s+" stops"
+puts stopsBetweenStations(Red, 'Alewife', Red, 'South Station').to_s+" stops"  
+puts stopsBetweenStations(Red, 'Central', Green, 'Arlington').to_s+" stops"

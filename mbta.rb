@@ -1,6 +1,6 @@
-REDLINE = ["south station", "park street", "kendall", "central", "harvard", "porter", "davis", "alewife"] 
-GREENLINE = ["government center", "park street", "boylston", "arlington", "copley", "hynes", "kenmore"]
-ORANGELINE = ["north station", "haymarket", "park street", "state", "downtown crossing", "chinatown",  "back bay", "forest hills"]
+REDLINE = ["South Station","Kendall","Central","Harvard","Park Street","Porter","Davis","Alewife"]
+GREENLINE = ["Government Center","Boylston","Arlington","Park Street","Copley","Hynes","Kenmore"]
+ORANGELINE = ["North Station","Haymarket", "State","Downtown Crossing","Chinatown", "Park Street", "Back Bay","Forest Hills"]
 
 
 def stops_between_stations(startLine, startStation, endLine, endStation)
@@ -22,5 +22,6 @@ def stops_between_stations(startLine, startStation, endLine, endStation)
 stops_between_stations('Red', 'Alewife', 'Orange', 'Downtown Crossing') // 5 stops
 stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') // 7 stops
   
+
 
 

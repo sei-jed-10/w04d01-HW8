@@ -1,68 +1,65 @@
-
-# your solution here
-
-## first initilize the arrays
-class subway
-def initialize
-    
-      red =['South Station', 'Park Street', 'Kendall', 'Central', 'Harvard', 'Porter', 'Davis', 'Alewife']
-      green =  ['Haymarket', 'Government Center','Park Street', 'Boylston', 'Arlington','Copley', 'Hynes', 'Kenmore']
-      orange = ['North Station', 'Haymarket','Park Street', 'State','Downtown Crossing', 'Chinatown','Back Bay', 'Forest Hills']
-    
-end
-
-## create a function with arguments startLine,station1,endLine,station2
 def stops_between_stations (startLine,station1,endLine,station2)
 
-    ## find the index of station1 and station2
-    index_station1 = startLine.index { |x| x == station1}
-    index_station2 = endLine.index { |x| x == station2}
-    
-    ## this statement will do only if both lines are the same
-    if startLine == endLine
-        if((startLine == "red" || endLine == "red") || (startLine == "green" || endLine == "green") || (startLine == "orange" || endLine == "orange"))
-            index_station2 - index_station1
-        end
+  subwayLines = {
+                   red: [ "South Station" , "Kendall" , "Central" , "Harvard" , "Park Street" , "Porter" , "Davis" , "Alewife"] ,
+                   green: [ "Government Center" , "Boylston" , "Arlington" , "Park Street" ,"Copley" , "Hynes" , "Kenmore"] ,
+                   orange: [ "North Station" , "Haymarket" , "State" , "Downtown Crossing" , "Chinatown" , "Park Street" , "Back Bay" , "Forest Hills" ] 
+                }
+ 
+ 
+                 dist = 0
 
-        if(station1 == "Park Street")
-        {
-          if(startLine == "red" && endLine == "green" || startLine == "green" && endLine == "red")
-                      
-              {
+     
+     ## this statement will do only if both lines are the same
+     if startLine == endLine
+ 
+         if((startLine == "red" || endLine == "red") || (startLine == "green" || endLine == "green") || (startLine == "orange" || endLine == "orange"))
+
+             dist = (subwayLines[startLine.to_sym].index(station1) - subwayLines[endLine.to_sym].index(station2)).abs
+             
+         end
+        
+     end
+     
+ 
+     if(station1 == "Park Street")
+         
+           if(startLine == "red" && endLine == "green" || startLine == "green" && endLine == "red")
+                       
+                           
+             dist = (subwayLines[startLine.to_sym].index("Park Street") - subwayLines[endLine.to_sym].index(station2) ).abs
             
-                index_station2 - index_station1
+ 
+           elsif(startLine == "red" && endLine == "orange" || startLine == "orange" && endLine == "red")
+ 
+               
+             dist = ( subwayLines[startLine.to_sym].index("Park Street") - subwayLines[endLine.to_sym].index(station2)).abs
+      
+      
+           elsif (startLine == "orange" && endLine == "green" || startLine == "green" && endLine == "orange")
+ 
+               
+             dist = (subwayLines[startLine.to_sym].index("Park Street") - subwayLines[endLine.to_sym].index(station2)).abs
 
-              }
-          elsif(startLine == "red" && endLine == "orange" || startLine == "orange" && endLine == "red")
-
-              {
-                
-                index_station2 - index_station1;
-
-              }
-
-          elsif (startLine == "orange" && endLine == "green" || startLine == "green" && endLine == "orange")
-
-              {
-                index_station2 - index_station1
-
-              } 
-              
-          }
-          else
-          {
-            index_station2 - index_station1
-
-          }
+           end
+             
+           
+      elsif(station1 != "Park Street")
+           
+             dist = (subwayLines[startLine.to_sym].index(station1) - subwayLines[endLine.to_sym].index(station2)).abs
+             
         end
+     
+ 
+ 
+         puts "Number of stops is #{dist}."
+ 
+ end
 
-end
-
-def display
-    ## display the solution..
-
-end
-
+ ### Make sure the startLine and endLine are lowerCased !!!!!
+stops_between_stations('red', 'Alewife', 'red', 'Park Street')  #3 stops
+stops_between_stations('red', 'Alewife', 'orange', 'Downtown Crossing') #4 stops
+stops_between_stations('red', 'South Station', 'green', 'Kenmore') #6 stops
 
 ###
 # 1) initialize arrays with red,green,orange

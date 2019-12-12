@@ -1,24 +1,31 @@
 
 # your solution here
 
-stations = {
-    red :["South Station", "Kendall", "Central", "Harvard", "Park Street", "Porter", "Davis", "Alewife"],
-    green :["Government Center", "Boylston", "Arlington", "Park Street", "Copley", "Hynes", "Kenmore"],
-    orange :["North Station", "Haymarket", "State", "Downtown Crossing", "Chinatown", "Park Street", "Back Bay", "Forest Hills"]
+$stations = {
+    red: ["South Station", "Kendall", "Central", "Harvard", "Park Street", "Porter", "Davis", "Alewife"],
+
+    green: ["Government Center", "Boylston", "Arlington", "Park Street", "Copley", "Hynes", "Kenmore"],
+
+    orange: ["North Station", "Haymarket", "State", "Downtown Crossing", "Chinatown", "Park Street", "Back Bay", "Forest Hills"]
     
 }
-class lines
-def stops_between_stations(start-line, start-station, end-line, end-station)
+
+p stations[:red][0]
+
+
+start_line = stations.keys 
+star_station = stations.values
+end_line = station.keys
+end_station = station.keys 
+
+# def stops_between_stations(start-line, start-station, end-line, end-station)
     
        
-              @start-line = stations[0]
-              @start-station = stations[0][i]
-              @end-line = stations[0]
-              @end-station = stations[0][i]
+              
            
 
-end
-puts stops_between_stations.gets.chomp
+# end
+# puts stops_between_stations.gets.chomp
 
 
 # stops_between_stations('Red', 'Alewife', 'Red', 'Park Street')) // 3 stops

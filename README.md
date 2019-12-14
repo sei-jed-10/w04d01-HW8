@@ -49,9 +49,9 @@ All 3 subway lines intersect at Park Street, but there are no other intersection
 Tell the user the number of stops between stations.
 
 ```rb
-stops_between_stations('Red', 'Alewife', 'Red', 'Park Street')) // 3 stops
-stops_between_stations('Red', 'Alewife', 'Orange', 'Downtown Crossing') // 5 stops
-stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') // 7 stops
+stops_between_stations('Red', 'Alewife', 'Red', 'Park Street')) # 3 stops
+stops_between_stations('Red', 'Alewife', 'Orange', 'Downtown Crossing') # 5 stops
+stops_between_stations('Red', 'South Station', 'Green', 'Kenmore') # 7 stops
 ```
 
 ### Bonus
@@ -64,7 +64,7 @@ stops_between_stations('Red', 'South Station', 'Green', 'Kenmore')
 # "Change at Park Street."
 # "Your trip continues through the following stops on Green Line:" 
 # "Copley, Hines, and Kenmore."
-# "8 stops in total."
+# "7 stops in total."
 ```
 
 ### Double Bonus
